@@ -14,6 +14,18 @@ public class ProductRepo {
         this.products = products;
     }
 
+
+    //Add method
+
+    public void add(Product product){
+        this.getProducts().put(product.getId(), product);
+    }
+
+    public Product getOneProduct(){
+
+    }
+
+
     public Map<String, Product> getProducts() {
         return products;
     }
