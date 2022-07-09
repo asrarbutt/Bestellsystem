@@ -2,36 +2,18 @@ package db;
 
 import model.Product;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ProductRepo {
 
-    Map<String, Product> products=new HashMap<>();
+   private final List<Product> products;
 
-
-    public ProductRepo(Map<String, Product> products) {
+    public ProductRepo(List<Product> products) {
         this.products = products;
     }
 
-
-    //Add method
-
-    public void add(Product product){
-        this.getProducts().put(product.getId(), product);
-    }
-
-    public Product getOneProduct(){
-
-    }
-
-
-    public Map<String, Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
-    }
-
-    public void setProducts(Map<String, Product> products) {
-        this.products = products;
     }
 
     @Override
@@ -39,5 +21,18 @@ public class ProductRepo {
         return "ProductRepo{" +
                 "products=" + products +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProductRepo that = (ProductRepo) o;
+        return Objects.equals(products, that.products);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(products);
     }
 }

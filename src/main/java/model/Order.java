@@ -1,23 +1,16 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Order {
     private String orderId;
-    List<Product> productList=new ArrayList<>();
+    private final List<Product> productList;
 
-
-
-    public Order() {
-    }
 
     public Order(String orderId, List<Product> productList) {
         this.orderId = orderId;
         this.productList = productList;
     }
-
 
     public String getOrderId() {
         return orderId;
@@ -29,10 +22,6 @@ public class Order {
 
     public List<Product> getProductList() {
         return productList;
-    }
-
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
     }
 
     @Override
