@@ -19,7 +19,7 @@ public class OrderRepo {
     }
 
     public Order addOrder(Order newOrder) {
-        this.orders.put(newOrder.getOrderId(), newOrder);
+        orders.put(newOrder.getOrderId(), newOrder);
         return newOrder;
 
     }
