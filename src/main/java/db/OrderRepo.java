@@ -8,9 +8,9 @@ import java.util.Map;
 
 public class OrderRepo {
 
-    Map<String, Order> orders=new HashMap<>();
+    private final Map<String, Order> orders = new HashMap<>();
 
-    public List<Order> listOrders(){
+    public List<Order> listOrders() {
         return List.copyOf(orders.values());
     }
 
@@ -18,7 +18,7 @@ public class OrderRepo {
         return orders;
     }
 
-    public Order addOrder(Order newOrder){
+    public Order addOrder(Order newOrder) {
         this.orders.put(newOrder.getOrderId(), newOrder);
         return newOrder;
 

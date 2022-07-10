@@ -6,10 +6,23 @@ import java.util.*;
 
 public class ProductRepo {
 
-   private final List<Product> products;
+    private final List<Product> products;
 
     public ProductRepo(List<Product> products) {
         this.products = products;
+    }
+
+
+    // get product method only one Product
+    public Product getProduct(String productId) {
+
+        for (Product product : products) {
+            if (product.getId().equals(productId)) {
+                return product;
+            }
+        }
+        throw new NoSuchElementException("Prduct with id: " + productId + " not found!");
+
     }
 
     public List<Product> getProducts() {
