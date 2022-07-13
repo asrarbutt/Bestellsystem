@@ -3,11 +3,10 @@ package service;
 import db.OrderRepo;
 import db.ProductRepo;
 import model.Order;
+import model.OrderStatus;
 import model.Product;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class ShopService {
@@ -38,7 +37,7 @@ public class ShopService {
             Product productToAdd = getProduct(productId);
             productToOrder.add(productToAdd);
         }
-        return orderRepo.addOrder(new Order(id, productToOrder));
+        return orderRepo.addOrder(new Order(id, productToOrder, OrderStatus.RECEIVED));
     }
 
     //ein Product
